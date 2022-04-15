@@ -3,7 +3,7 @@
 Rover Cam is a network independent security, and pest control software, to be used on Raspberry Pi.<br/>
 
 On motion detection it can:<br/>
-    • record clips, or images<br/>
+<t/>    • record clips, or images<br/>
     • play one or more audio files, or run python files<br/>
     • control up to 8 GPIO pins by turning them on and off, called “Actions”<br/>
 

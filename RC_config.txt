@@ -1,0 +1,118 @@
+
+-   ---- Rover Cam Config ----
+
+- Change settings, and write programs here, set time in set-time.txt
+
+- Bowser Cam is designed to run without an internet connection, if accurate date stamps
+- are desired, the time will have to be set for each time the program starts.
+- Note: Will lose accuracy over long periods of time. Does not compensate for leap years, or
+- day light savings.
+- Aim for the time that the pi will be booted, plus 10-60s (for boot).
+- The format is 24 hour time in this order: year, month, day, hour, minute, second.
+set_time = 0000 00 00 00 00 00
+
+run_at_system_boot = N
+
+- When motion is dectected, how long should video be recorded for? (seconds)
+clip_time = 10
+
+use_pi_camera = N
+
+- Set the max frames per second. This is limited by processing power so actual FPS maybe
+- lower. If using a pi camera and clips are playing fast with shorter clip times then 
+- set "Clip Time", then try a lower FPS.
+fps = 15
+
+- Motion area size: a lower number here may cause false detections.
+- Recommended 20 or higher.
+motion_area = 20
+
+- Motion sensitivity baseline: a lower number here will increase sensitivity.
+- Is simular to motion area, but is effected more by brightly lite environments.
+- If false detections are a problem, then motion area should be experimented with first.
+- 4 is a good number here
+motion_sens = 4
+
+- mode 1 just records on motion
+- mode 2 records and preforms actions on motion
+- mode 3 just preforms actions on motion
+- Set starting mode below:
+mode = 2
+
+- Optionally play an audio or python3 files on motion
+- Will play any and all .wav or .py files in "/home/pi/Desktop/Run-at-startup/audio"
+- Y or N
+- Delay is in seconds, and will delay the running of the files
+- This can be left on, will not fault out even if no files in location.
+play_audio = N
+delay_audio = 0
+
+- Optional disable button (blue).
+- Will stop recording, all actions, and audio, and start them again when pressed at a later time
+- A simple code can be set here, consisting of number of presses in set time frame.
+- Any more or less presses within time frame, and system will not disable.
+- This feature can be used even when inside of motion detection area, but be sure to add ~0.5s delays
+- before actions or audio. ex. start with a1 off 0.5, and delay_audio 0.5s more.
+--- and write "disabled" into vid save?---?
+use_disable_button = Y
+disable_button_presses = 1
+disable_button_time_frame = 2
+
+- Disable the disable button for a time after a failed disable attemp.
+- This is makes it harder if someone is trying to guess the disable code.
+- The disable button with not have effect until this time in seconds is up.
+- To lock until the system is rebooted (or the power going out and coming back on)
+- enter "infinity" instead of a number.
+lock_disable_time = 3
+
+- This is a start delay for all the mode files. The files might take a few seconds to start, but this
+- will add extra delay. Is useful if operator is physically inside the camera view, while using buttons,
+- or will pass through the camera view when leaving the area.
+start_delay = 2
+
+- Set camera index. If you don't know your camera index, try 0, 1, 2 etc.
+camera_index = 1
+
+- Here you can write your custom program that simple turns GPIO pins on and off.
+- These are refered to as "actions", each action controls a separate pin. 
+- "a1" means action 1.
+- Number that comes after "on" or "off" is the time in seconds that it will remain in that state.
+- Can use decimal numbers
+- Always start will "off" even if for zero seconds
+
+
+Actions: allways start in off state, 0's and decimals acceptable.
+
+a1 off 0
+a1 on 5
+a1 off 0
+
+a2 off 1
+a2 on 0.1
+a2 off 0.1
+a2 on 0.1
+a2 off 0.1
+a2 on 0.1
+a2 off 0.1
+a2 on 0.1
+a2 off 0.1
+a2 on 0.1
+a2 off 0.1
+a2 on 0.1
+a2 off 0.1
+a2 on 0.1
+a2 off 0.1
+a2 on 0.1
+a2 off 0.1
+a2 on 0.1
+a2 off 0.1
+
+a3 off 2
+a3 on 1.5
+a3 off 1.56
+a3 
+
+
+
+
+

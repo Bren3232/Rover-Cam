@@ -256,6 +256,7 @@ def load_all():
     #         print("No  p_list_save")
 
         p = open(path_usb + "/aoi_pts.txt", "r")
+        p.readline()
         pts = p.read().split()
         p.close()
 
@@ -558,6 +559,7 @@ def save_btn():
 
         p = open(path_usb + "/aoi_pts.txt", "w")
     #     pts = p.read().split()
+        p.write("This is place holder text")
         for i in p_list:
             for j in i:
                 p.write(str(j) + " ")

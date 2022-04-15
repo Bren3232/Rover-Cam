@@ -227,6 +227,7 @@ a8o.append(0)
 
 # Load aoi pts list if any -----------------------------
 p = open(path_usb + "/aoi_pts.txt", "r")
+p.readline()
 pts = p.read().split()
 p.close()
 

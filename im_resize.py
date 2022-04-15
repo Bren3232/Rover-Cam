@@ -1,12 +1,11 @@
 
-# Contains a copy of imutils, and may contain some functions from other places
 
 # import the necessary packages
 import numpy as np
 import cv2
 
 
-# File has been shortened, this is resize from imutils
+# This is resize from imutils
 
 def resize(image, width=None, height=None, inter=cv2.INTER_AREA):
     # initialize the dimensions of the image to be resized and

@@ -13,7 +13,7 @@ Here's a quick look at the UI:<br/>
 https://youtu.be/_9ljmr4q4M4
 
 
-**Change main folder name from "Rover-Cam-main" to "Rover_Cam".**
+Change main folder name from "Rover-Cam-main" to "Rover_Cam".
 
 
 

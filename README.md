@@ -13,7 +13,7 @@ Here's a quick look at the UI:<br/>
 https://youtu.be/_9ljmr4q4M4
 
 
-If downloading from git, change main folder name from "Rover-Cam-main" to "Rover_Cam". Then see manual or rest of set-up.
+If downloading from git, move internal "Rover-Cam-main" folder to Desktop, and change name to "Rover_Cam". Then see manual or rest of set-up.
 
 
 

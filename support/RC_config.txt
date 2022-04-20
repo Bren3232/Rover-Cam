@@ -1,0 +1,89 @@
+
+-   ---- Rover Cam Config ----
+
+- Bowser Cam is designed to run without an internet connection, if accurate date stamps
+- are desired, the time will have to be set for each time the program starts.
+- Note: Will lose accuracy over long periods of time. Does not compensate for leap years, or
+- day light savings.
+- Aim for the time that the pi will be booted, plus about 1 minute, for boot and program start.
+- The format is 24 hour time in this order: year, month, day, hour, minute, second.
+set_time = 0099 00 00 00 00 00
+
+run_at_system_boot = N
+
+- When motion is detected, how long should video be recorded for?
+- If set to under 1 second, then images will be saved instead. If set to 0 every motion
+- frame will be saved. If set to 0.5 then one motion frame per half second will be saved,
+- assuming the camera is seeing continuous motion.
+clip_time = 7
+
+- To use a UBS camera leave this setting off
+use_pi_camera = N
+
+- Set the max frames per second. This is limited by processing power so actual FPS maybe
+- lower. If clips are playing fast with shorter clip times then set "Clip Time", try a lower FPS.
+fps = 15
+
+- Motion area size: a lower number here may cause false detections.
+- A higher number will only detect larger moving objects, or closer small objects.
+- Recommended 20 or higher.
+motion_area = 20
+
+- Motion sensitivity baseline: a lower number here will increase sensitivity.
+- Is simular to motion area, but is effected more by brightly lite environments.
+- If false detections are a problem, then motion area should be experimented with first.
+- 4 is a good number here
+motion_sens = 4
+
+- mode 1 just records on motion
+- mode 2 records and preforms actions on motion
+- mode 3 just preforms actions on motion
+mode = 1
+
+- Optionally play an audio or python3 files on motion
+- Will play any and all .wav or .py files in "audio" folder, one after another in alphabetical order.
+- (can be left on, will not fault out even if no files in location).
+play_audio = Y
+
+- Delay Audio will delay the running of files, in the audio folder.
+delay_audio = 0
+
+- Will stop recording, all actions, and audio, and start them again when pressed at a later time.
+- A simple code can be set here, consisting of number of presses in set time frame.
+- Any more or less presses within time frame, and system will not disable.
+- To re-enable, follow same procedure.
+- This feature can be used even when inside of motion detection area, but be sure to add some delay
+- to audio, and Actions, if used, and the "Activation Delay" for when activating and leaving
+use_disable_button = Y
+disable_button_presses = 1
+disable_button_time_frame = 2
+
+- Disable the disable button for a time after a failed disable attemp.
+- This is makes it harder if someone is trying to guess the disable code.
+- The disable button with not have effect until this time in seconds is up.
+- To lock until the system is rebooted (or the power going out and coming back on)
+- enter "infinity" instead of a number.
+lock_disable_time = 3
+
+- This is a start delay for all the mode files. The files might take a few seconds to start, but this
+- will add extra delay. Is useful if operator is physically inside the camera view, while using buttons,
+- or will pass through the camera view when leaving the area. This will delay mode start, from boot, disabled state,
+- and mode select state.
+start_delay = 1
+
+- Setting camera index to -1 is recommended, since the camera indexes on
+- the pi could change. -1 will find any camera attached by lowest index number.
+camera_index = 1
+
+- Here you can write your custom program that turns GPIO pins on and off.
+- These are referred to as "Actions", each Action controls a separate pin.
+- The number that comes after "on" or "off" is the time in seconds that it will remain in that state.
+- Enter "on" or "off", followed by a number of seconds to remain in that state, repeat on a new line.
+- Alternate state with each new line. Always start in "off" state, even if for zero seconds.
+- Decimal numbers accepted.
+
+
+Actions: always start in off state, 0's and decimals acceptable.
+
+
+

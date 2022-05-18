@@ -16,3 +16,5 @@ https://youtu.be/MfjvZkdmPCg
 See manual for set-up.
 
 Update April 19: I fixed a bug, organized files into folders, and made it so that Rover Cam can run from any directory, or USB storage device. Even the name of the containing folder doesn't matter, as long as the files and folders are organized as seen here. 
+
+Update: Has a bug with the date time, if no detects for a long time, should be easy fix, but low priority.

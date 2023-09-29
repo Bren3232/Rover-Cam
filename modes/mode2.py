@@ -260,7 +260,7 @@ def runAction(on_list, off_list, pin):      # now working  and does not effect v
 
     on_list_idx = 0
     off_list_idx = 0
-    for i in max(on_list, off_list):        # max to iter based on longest list
+    for i in range(max(len(on_list), len(off_list))):       # max to iter based on longest list
 
         GPIO.output(pin, GPIO.LOW)
 
